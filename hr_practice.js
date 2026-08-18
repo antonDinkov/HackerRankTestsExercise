@@ -36,3 +36,15 @@ function staircase(n) {
         console.log(`${spaces}${hashtags}`)
     }
 }
+
+function birthdayCakeCandles(candles) {
+    // Write your code here
+    const tallestCandle = Math.max(...candles);
+    console.log(tallestCandle);
+    
+    let countTallests = 0;
+    candles.forEach(candle => {
+        if (candle == tallestCandle) countTallests++;
+    })
+    return countTallests;
+}
