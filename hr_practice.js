@@ -80,3 +80,16 @@ function timeConversion(s) {
     const formattedTime = convertedToArr.join(':');
     return formattedTime;
 }
+
+function timeConversion1(s) {
+    const period = s.slice(-2);
+    let hour = Number(s.slice(0, 2));
+
+    if (period === 'AM' && hour === 12) {
+        hour = 0;
+    } else if (period === 'PM' && hour !== 12) {
+        hour += 12;
+    }
+
+    return String(hour).padStart(2, '0') + s.slice(2, 8);
+}
