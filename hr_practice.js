@@ -11,8 +11,6 @@ function diagonalDifference(arr) {
     return Math.abs(sumLefTorigth - sumRightToLeft);
 }
 
-let arr = [[1, 2, 3], [4, 5, 6], [9, 8, 9]];
-console.log(diagonalDifference(arr));
 
 function plusMinus(arr) {
     // Write your code here
@@ -28,4 +26,13 @@ function plusMinus(arr) {
     console.log((positive/n).toFixed(6));
     console.log((negative/n).toFixed(6));
     console.log((zeros/n).toFixed(6));
+}
+
+function staircase(n) {
+    // Write your code here
+    for (let i = 0; i < n; i++) {
+        let spaces = ' '.repeat(n - 1 - i);
+        let hashtags = '#'.repeat(i + 1);
+        console.log(`${spaces}${hashtags}`)
+    }
 }
