@@ -205,3 +205,32 @@ function weightedUniformStrings(s, queries) {
         weights.has(query) ? 'Yes' : 'No'
     );
 }
+
+function separateNumbers(s) {
+    if (s[0] === '0') {
+        console.log('NO');
+        return;
+    }
+
+    const length = s.length;
+
+    for (let firstLength = 1; firstLength <= Math.floor(length / 2); firstLength++) {
+        const firstNumberString = s.slice(0, firstLength);
+        const firstNumber = BigInt(firstNumberString);
+
+        let currentNumber = firstNumber;
+        let generatedString = '';
+
+        while (generatedString.length < length) {
+            generatedString += currentNumber.toString();
+            currentNumber++;
+        }
+
+        if (generatedString === s) {
+            console.log(`YES ${firstNumberString}`);
+            return;
+        }
+    }
+
+    console.log('NO');
+}
