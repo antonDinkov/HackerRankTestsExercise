@@ -182,5 +182,26 @@ function weightedUniformStrings(s, queries) {
     return result;
 }
 
-console.log(weightedUniformStrings('abbcccdddd', [1, 7, 5, 4, 15]));
-console.log(weightedUniformStrings('abccddde', [1, 3, 12, 5, 9, 10]));
+function weightedUniformStrings(s, queries) {
+    const weights = new Set();
+
+    let currentWeight = 0;
+    let previousChar = '';
+
+    for (const char of s) {
+        const charWeight = char.charCodeAt(0) - 96;
+
+        if (char === previousChar) {
+            currentWeight += charWeight;
+        } else {
+            currentWeight = charWeight;
+        }
+
+        weights.add(currentWeight);
+        previousChar = char;
+    }
+
+    return queries.map(query =>
+        weights.has(query) ? 'Yes' : 'No'
+    );
+}
