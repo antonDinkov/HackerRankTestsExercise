@@ -93,3 +93,27 @@ function timeConversion1(s) {
 
     return String(hour).padStart(2, '0') + s.slice(2, 8);
 }
+
+function miniMaxSum(arr) {
+    // Write your code here
+    const sortedArr = arr.sort((a, b) => a - b);
+    const minValueSum = sortedArr[0] + sortedArr[1] + sortedArr[2] + sortedArr[3];
+    const maxValueSum = sortedArr[1] + sortedArr[2] + sortedArr[3] + sortedArr[4];
+    
+    const min_max = minValueSum + ' ' + maxValueSum;
+    console.log(min_max);
+}
+
+function miniMaxSum(arr) {
+    let sum = 0;
+    let min = Infinity;
+    let max = -Infinity;
+
+    for (const num of arr) {
+        sum += num;
+        min = Math.min(min, num);
+        max = Math.max(max, num);
+    }
+
+    console.log(sum - max, sum - min);
+}
