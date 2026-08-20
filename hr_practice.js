@@ -242,11 +242,27 @@ function gradingStudents(grades) {
     const roundedGrades = grades.map(grade => {
         if (grade < 38) return grade;
         let rest = grade % 5;
-        console.log(`rest is ${rest}`);
         if ((rest) >= 3) {
             return grade + (5 - rest);
         } else return grade;
     })
     
     return roundedGrades;
+}
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    // Write your code here
+    let applesInRangeCount = 0;
+    let orangesInRangeCount = 0;
+    for(let apple of apples) {
+        let location = a + apple;
+        if (location >= a && location <= t) applesInRangeCount++;
+    };
+    
+    for(let orange of oranges) {
+        let location = b + orange;
+        if (location >= a && location <= t) orangesInRangeCount++;
+    }
+    
+    console.log(applesInRangeCount + '\n' + orangesInRangeCount)
 }
