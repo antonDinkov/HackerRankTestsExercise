@@ -220,8 +220,10 @@ function separateNumbers(s) {
 
         let currentNumber = firstNumber;
         let generatedString = '';
-
+        console.log(generatedString.length);
+        
         while (generatedString.length < length) {
+            console.log(`generatedString is length: ${generatedString.length}`);
             generatedString += currentNumber.toString();
             currentNumber++;
         }
@@ -233,4 +235,18 @@ function separateNumbers(s) {
     }
 
     console.log('NO');
+}
+
+function gradingStudents(grades) {
+    // Write your code here
+    const roundedGrades = grades.map(grade => {
+        if (grade < 38) return grade;
+        let rest = grade % 5;
+        console.log(`rest is ${rest}`);
+        if ((rest) >= 3) {
+            return grade + (5 - rest);
+        } else return grade;
+    })
+    
+    return roundedGrades;
 }
