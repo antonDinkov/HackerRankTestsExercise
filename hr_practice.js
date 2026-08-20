@@ -256,12 +256,12 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     let orangesInRangeCount = 0;
     for(let apple of apples) {
         let location = a + apple;
-        if (location >= a && location <= t) applesInRangeCount++;
+        if (location >= s && location <= t) applesInRangeCount++;
     };
     
     for(let orange of oranges) {
         let location = b + orange;
-        if (location >= a && location <= t) orangesInRangeCount++;
+        if (location >= s && location <= t) orangesInRangeCount++;
     }
     
     console.log(applesInRangeCount + '\n' + orangesInRangeCount)
