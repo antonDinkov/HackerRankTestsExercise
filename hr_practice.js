@@ -326,3 +326,23 @@ function getTotalX(a, b) {
     };
     return total;
 }
+
+function breakingRecords(scores) {
+    // Write your code here
+    let initMax = scores[0];
+    let maxBreaktrough = 0;
+    let initMin = scores[0];
+    let minBreaktrough = 0;
+    for (let i = 1; i < scores.length; i++) {
+        if (scores[i] > initMax) {
+            initMax = scores[i];
+            maxBreaktrough++;
+        };
+        if (scores[i] < initMin) {
+            initMin = scores[i];
+            minBreaktrough++;
+        };
+    }
+    
+    return [maxBreaktrough, minBreaktrough];
+}
