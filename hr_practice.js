@@ -266,3 +266,31 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     
     console.log(applesInRangeCount + '\n' + orangesInRangeCount)
 }
+
+
+/* x1 + n*v1 = x2 + n*v2
+
+n*v1 - n*v2 = x2 - x1
+
+n(v1 - v2) = x2 - x1
+
+n = (x2 - x1) / (v1 - v2) */
+function kangaroo(x1, v1, x2, v2) {
+    if (v2 >= v1) return "NO";
+
+    return (x2 - x1) % (v1 - v2) === 0 ? "YES" : "NO";
+}
+
+function kangaroo(x1, v1, x2, v2) {
+    // Write your code here
+    if (v2 >= v1) return "NO";
+    let kang1 = x1;
+    let kang2 = x2;
+    
+    while (kang1 < kang2) {
+        kang1 += v1;
+        kang2 += v2;
+    }
+    
+    return kang1 == kang2 ? "YES" : "NO";
+}
