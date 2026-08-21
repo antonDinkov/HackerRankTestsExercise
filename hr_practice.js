@@ -294,3 +294,35 @@ function kangaroo(x1, v1, x2, v2) {
     
     return kang1 == kang2 ? "YES" : "NO";
 }
+
+
+function getTotalX(a, b) {
+    // Write your code here
+    let total = 0;
+    for (let i = 1; i <= Math.min(...b); i++) {
+        let flagman = false;
+        for (let num of a) {
+            if (i % num == 0) {
+                flagman = true;
+            } else {
+                flagman = false;
+                break;
+            }
+        };
+        if (!flagman) continue;
+        
+        for (let num of b) {
+            if (num % i == 0) {
+                flagman = true;
+            } else {
+                flagman = false;
+                break;
+            }
+        };
+        
+        if (flagman) {
+            total++;
+        };
+    };
+    return total;
+}
