@@ -346,3 +346,22 @@ function breakingRecords(scores) {
     
     return [maxBreaktrough, minBreaktrough];
 }
+
+
+function divisibleSumPairs(n, k, ar) {
+    // Write your code here
+    let counter = 0;
+    for (let i; i < ar.length; i++) {
+        let currentNum = ar[i];
+        let restToCalc = ar.slice(i+1);
+        for (let num of restToCalc) {
+            console.log(currentNum + num)
+            if ((currentNum+num)%k == 0) {
+                counter++;
+            }
+        }
+    }
+    return counter;
+}
+
+divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2])
