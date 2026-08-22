@@ -351,7 +351,7 @@ function breakingRecords(scores) {
 function divisibleSumPairs(n, k, ar) {
     // Write your code here
     let counter = 0;
-    for (let i; i < ar.length; i++) {
+    for (let i = 0; i < ar.length; i++) {
         let currentNum = ar[i];
         let restToCalc = ar.slice(i+1);
         for (let num of restToCalc) {
@@ -364,4 +364,31 @@ function divisibleSumPairs(n, k, ar) {
     return counter;
 }
 
-divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2])
+function migratoryBirds(arr) {
+    let list = {};
+
+    for (let num of arr) {
+        if (list[num] === undefined) {
+            list[num] = 1;
+        } else {
+            list[num]++;
+        }
+    }
+
+    let maxCount = 0;
+    let lowestType = Infinity;
+
+    for (let key in list) {
+        if (
+            list[key] > maxCount ||
+            (list[key] === maxCount && Number(key) < lowestType)
+        ) {
+            maxCount = list[key];
+            lowestType = Number(key);
+        }
+    }
+
+    return lowestType;
+}
+
+console.log(migratoryBirds([1, 4, 4, 4, 5, 3]));
