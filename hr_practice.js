@@ -411,3 +411,18 @@ function dayOfProgrammer(year) {
 
     return `${day}.09.${year}`;
 }
+
+function bonAppetit(bill, k, b) {
+    // Write your code here
+    let annaIsConsumation = 0;
+    for (let i = 0; i < bill.length; i++) {
+        if (i == k) continue;
+        let currentPrice = bill[i];
+        annaIsConsumation += currentPrice;
+    }
+    const annaIsBill = annaIsConsumation / 2;
+    
+    annaIsBill >= b ? console.log('Bon Appetit') : console.log(b - annaIsBill);
+}
+
+bonAppetit([3, 10, 2, 9], 1, 2);
