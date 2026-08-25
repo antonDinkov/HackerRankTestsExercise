@@ -424,5 +424,28 @@ function bonAppetit(bill, k, b) {
     
     annaIsBill >= b ? console.log('Bon Appetit') : console.log(b - annaIsBill);
 }
+function sockMerchant(n, ar) {
+    // Write your code here
+    const sortedAr = ar.sort((a, b) => a - b);
 
-bonAppetit([3, 10, 2, 9], 1, 2);
+    let pairs = 0;
+    let colorCount = 0;
+
+    for (let i = 0; i < sortedAr.length; i++) {
+        if (i === 0) {
+            colorCount++;
+            continue;
+        }
+
+        if (sortedAr[i] === sortedAr[i - 1]) {
+            colorCount++;
+        } else {
+            pairs += Math.trunc(colorCount / 2);
+            colorCount = 1;
+        }
+    }
+
+    pairs += Math.trunc(colorCount / 2);
+
+    return pairs;
+}
