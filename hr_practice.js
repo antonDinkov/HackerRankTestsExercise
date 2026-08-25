@@ -391,4 +391,23 @@ function migratoryBirds(arr) {
     return lowestType;
 }
 
-console.log(migratoryBirds([1, 4, 4, 4, 5, 3]));
+function dayOfProgrammer(year) {
+    // Write your code here
+    if (year === 1918) {
+        return "26.09.1918";
+    }
+
+    let isLeapYear;
+
+    if (year < 1918) {
+        isLeapYear = year % 4 === 0;
+    } else {
+        isLeapYear =
+            year % 400 === 0 ||
+            (year % 4 === 0 && year % 100 !== 0);
+    }
+
+    const day = isLeapYear ? 12 : 13;
+
+    return `${day}.09.${year}`;
+}
