@@ -424,6 +424,7 @@ function bonAppetit(bill, k, b) {
     
     annaIsBill >= b ? console.log('Bon Appetit') : console.log(b - annaIsBill);
 }
+
 function sockMerchant(n, ar) {
     // Write your code here
     const sortedAr = ar.sort((a, b) => a - b);
@@ -448,4 +449,12 @@ function sockMerchant(n, ar) {
     pairs += Math.trunc(colorCount / 2);
 
     return pairs;
+}
+
+function pageCount(n, p) {
+    // Write your code here
+    const fromFront = Math.floor(p / 2);
+    const fromBack = Math.floor(n / 2) - Math.floor(p / 2);
+
+    return Math.min(fromFront, fromBack);
 }
