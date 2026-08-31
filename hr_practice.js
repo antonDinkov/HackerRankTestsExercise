@@ -458,10 +458,14 @@ function pageCount(n, p) {
 
     return Math.min(fromFront, fromBack);
 }
-function pageCount(n, p) { //моя вариант на изчисленията
-    const middlePage = Math.ceil(n / 2);
+function pageCount(n, p) { //моят вариант поправен
+    let middlePage = Math.ceil(n / 2);
 
-    if (p > middlePage) {
+    if (n % 2 === 0) {
+        middlePage++;
+    }
+
+    if (p >= middlePage) {
         const pageToTheEnd = n - p;
 
         if (n % 2 === 0) {
