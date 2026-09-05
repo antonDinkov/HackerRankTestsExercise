@@ -477,3 +477,22 @@ function pageCount(n, p) { //моят вариант поправен
         return Math.floor(p / 2);
     }
 }
+
+function countingValleys(steps, path) {
+    // Write your code here
+    let sealevel = 0;
+    let vallaysCount = 0;
+    for (let step = 0; step < steps; step++) {
+        if (path[step] == "D") {
+            sealevel--;
+        } else if (path[step] == "U" && sealevel >= 0) {
+            sealevel++;
+        } else if (path[step] == "U" && sealevel < 0){
+            sealevel++;
+            if (sealevel == 0) {
+                vallaysCount++;
+            }
+        }
+    }
+    return vallaysCount;
+}
