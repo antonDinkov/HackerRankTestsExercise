@@ -496,3 +496,23 @@ function countingValleys(steps, path) {
     }
     return vallaysCount;
 }
+
+function getMoneySpent(keyboards, drives, b) {
+    /*
+     * Write your code here.
+     */
+    let biggestPriceOfBoth = 0;
+    for (let keyboard of keyboards) {
+        for (let drive of drives) {
+            let currentPrice = keyboard + drive;
+            if (currentPrice > biggestPriceOfBoth && currentPrice <= b) {
+                biggestPriceOfBoth = currentPrice;
+            }
+        }
+    };
+    if (biggestPriceOfBoth == 0) {
+        return -1;
+    } else {
+        return biggestPriceOfBoth;
+    };
+}
