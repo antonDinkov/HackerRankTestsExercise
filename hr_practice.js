@@ -546,3 +546,29 @@ function formingMagicSquare(s) {
     return minCost;
 
 }
+
+function pickingNumbers(a) {
+    // Write your code here
+    const orderedArray = a.sort((b, c) => b - c);
+
+    let arrayOfArrays = [];
+    let arrToPush = [];
+
+    for (let i = 0; i < orderedArray.length; i++) {
+        if (arrToPush.length === 0) {
+            arrToPush.push(orderedArray[i]);
+            continue;
+        }
+
+        if (orderedArray[i] - arrToPush[0] <= 1) {
+            arrToPush.push(orderedArray[i]);
+        } else {
+            arrayOfArrays.push(arrToPush.length);
+            arrToPush = [orderedArray[i]];
+        }
+    }
+
+    arrayOfArrays.push(arrToPush.length);
+
+    return Math.max(...arrayOfArrays);
+}
