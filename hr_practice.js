@@ -572,3 +572,19 @@ function pickingNumbers(a) {
 
     return Math.max(...arrayOfArrays);
 }
+function pickingNumbers(a) {
+    const orderedArray = a.sort((b, c) => b - c);
+
+    let maxLength = 0;
+    let start = 0;
+
+    for (let i = 0; i < orderedArray.length; i++) {
+        while (orderedArray[i] - orderedArray[start] > 1) {
+            start++;
+        }
+
+        maxLength = Math.max(maxLength, i - start + 1);
+    }
+
+    return maxLength;
+}
