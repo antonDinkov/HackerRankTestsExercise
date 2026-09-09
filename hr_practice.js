@@ -588,3 +588,10 @@ function pickingNumbers(a) {
 
     return maxLength;
 }
+
+function hurdleRace(k, height) {
+    // Write your code here
+    const highest = Math.max(...height);
+    if (k >= highest) return 0;
+    return (highest - k);
+}
