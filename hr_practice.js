@@ -595,3 +595,26 @@ function hurdleRace(k, height) {
     if (k >= highest) return 0;
     return (highest - k);
 }
+
+function climbingLeaderboard(ranked, player) {
+    // Write your code here
+    let ranks = [...new Set(ranked)].reverse();
+    const playerScores = [];
+
+    for (let score of player) {
+        let playerRank = ranks.length + 1;
+
+        for (let rank = 1; rank <= ranks.length; rank++) {
+            if (score >= ranks[rank - 1]) {
+                playerRank = ranks.length - rank + 1;
+            } else {
+                break;
+            }
+        }
+
+        playerScores.push(playerRank);
+    }
+
+    return playerScores;
+
+}
