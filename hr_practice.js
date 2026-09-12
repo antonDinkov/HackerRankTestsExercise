@@ -618,3 +618,14 @@ function climbingLeaderboard(ranked, player) {
     return playerScores;
 
 }
+
+function designerPdfViewer(h, word) {
+    // Write your code here
+    const heights = [];
+    for (let letter of word) {
+        const letterIndex = letter.charCodeAt(0) - 97;
+        heights.push(h[letterIndex]);
+    }
+    const maxHeight = Math.max(...heights);
+    return maxHeight * word.length;
+}
