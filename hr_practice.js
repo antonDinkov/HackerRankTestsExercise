@@ -654,3 +654,13 @@ function angryProfessor(k, a) {
     }
     return "YES";
 }
+
+function beautifulDays(i, j, k) {
+    // Write your code here
+    let beautifullDaysCount = 0;
+    for (i; i <= j; i++) {
+        let reversedNum = Number(String(i).split('').reverse().join(''));
+        if ((i - reversedNum) % k == 0) beautifullDaysCount++;
+    }
+    return beautifullDaysCount;
+}
