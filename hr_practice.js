@@ -642,3 +642,15 @@ function utopianTree(n) {
     }
     return currentHeight;
 }
+
+function angryProfessor(k, a) {
+    // Write your code here
+    let ontime = 0;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] <= 0) ontime++;
+        if (ontime == k) {
+            return "NO";
+        }
+    }
+    return "YES";
+}
