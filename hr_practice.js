@@ -676,3 +676,8 @@ function viralAdvertising(n) {
     }
     return likes;
 }
+
+function saveThePrisoner(n, m, s) {
+    // Write your code here
+    return ((s - 1 + m - 1) % n) + 1; //Използвам modular arithmetic, за да моделирам цикличното движение, вместо да симулирам всяка стъпка с цикъл.
+}
