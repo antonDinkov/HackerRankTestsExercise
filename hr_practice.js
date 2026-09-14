@@ -629,3 +629,16 @@ function designerPdfViewer(h, word) {
     const maxHeight = Math.max(...heights);
     return maxHeight * word.length;
 }
+
+function utopianTree(n) {
+    // Write your code here
+    let currentHeight = 1;
+    for (let cicle = 1; cicle <= n; cicle++) {
+        if (cicle % 2 != 0) {
+            currentHeight *= 2;
+        } else {
+            currentHeight++;
+        }
+    }
+    return currentHeight;
+}
