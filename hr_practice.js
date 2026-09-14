@@ -664,3 +664,15 @@ function beautifulDays(i, j, k) {
     }
     return beautifullDaysCount;
 }
+
+function viralAdvertising(n) {
+    // Write your code here
+    let testers = 5;
+    let likes = 0;
+    for (let i = 1; i <= n; i++){
+        let liked = Math.floor(testers / 2);
+        likes += liked;
+        testers = liked * 3;
+    }
+    return likes;
+}
