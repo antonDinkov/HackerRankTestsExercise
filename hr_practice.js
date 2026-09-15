@@ -681,3 +681,15 @@ function saveThePrisoner(n, m, s) {
     // Write your code here
     return ((s - 1 + m - 1) % n) + 1; //Използвам modular arithmetic, за да моделирам цикличното движение, вместо да симулирам всяка стъпка с цикъл.
 }
+
+function circularArrayRotation(a, k, queries) {
+    // Write your code here
+    const n = a.length;
+    const rotations = k % n;
+
+    return queries.map(q => {
+        const originalIndex = (q - rotations + n) % n;
+        return a[originalIndex];
+    });
+
+}
